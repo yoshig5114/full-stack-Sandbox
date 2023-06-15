@@ -1,6 +1,7 @@
 const express = require('express');
+const config = require('./config');
 const app = express();//this is an instance of express method
-const PORT = 3001;
+
 
 // middleware
 app.use(express.json());
@@ -27,6 +28,6 @@ app.get("/heroes", (req, res) => {
     res.end();
 })
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(config.port, () => {
+    console.log(`Server is running on port ${config.port}`);
 })
